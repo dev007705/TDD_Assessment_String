@@ -1,6 +1,6 @@
 public class StringCalculator {
-	private final String delimeter=",|\n";
-	
+
+	private String delimeter=",|\n";
 	public int Add(String numbers) {
 		
 		if(isEmpty(numbers)) {
@@ -16,9 +16,13 @@ public class StringCalculator {
 	}
 	
 	private String[] splitString(String input) {
+		if(input.startsWith("//")) {
+			String[] parts = input.split("\n",2);
+			delimeter=parts[0].substring(2);
+			input=parts[1];
+		}
 		return input.split(delimeter);
 	}
-
 	
 	private int strAdd(String[] input) {
 		int sum=0;

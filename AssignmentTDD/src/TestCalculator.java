@@ -35,4 +35,8 @@ public class TestCalculator {
 	public void newlines() {
 		assertEquals(cal.Add("1\n2,3"),6);
 	}
+	@Test
+	public void multipledelimeter() {
+		assertEquals(cal.Add("//;\n1;2"),3);
+	}
 }
