@@ -1,7 +1,7 @@
 public class StringCalculator {
 
 	private String delimeter=",|\n";
-	public int Add(String numbers) {
+	public int Add(String numbers) throws Exception {
 		
 		if(isEmpty(numbers)) {
 			return 0;
@@ -28,9 +28,13 @@ public class StringCalculator {
 		return input.startsWith("//");
 	}
 	
-	private int strAdd(String[] input) {
+	private int strAdd(String[] input) throws Exception {
 		int sum=0;
+		
 		for(String i:input) {
+			if(stringToint(i)<0) {
+				throw new Exception("negative not allowed "+i);
+			}
 			sum+=stringToint(i);
 		}
 		return sum;
