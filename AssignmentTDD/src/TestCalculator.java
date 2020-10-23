@@ -25,4 +25,9 @@ public class TestCalculator {
 	public void twoString() {
 		assertEquals(cal.Add("2,4"),6);
 	}
+	
+	@Test
+	public void unknownAmountString() {
+		assertEquals(cal.Add("1,2,3,4"),10);
+	}
 }

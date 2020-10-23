@@ -10,14 +10,21 @@ public class StringCalculator {
 		else if(numbers.length() == 1) {
 			return stringToint(numbers);
 		}
-	
-		return strAdd(input[0],input[1]);
+		else if(numbers.length() == 3 ) {
+			return strAdd(input[0],input[1]);
+		}
+		return strAdd(input);
 		
 	}
-	private int strAdd(String num1, String num2) {
-		return stringToint(num1)+stringToint(num2);
-	}
 	
+	private int strAdd(String[] input) {
+		int sum=0;
+		return sum;
+	}
+	private int strAdd(String num1, String num2) {
+		return Integer.parseInt(num1)+Integer.parseInt(num2);
+	}
+		
 	private int stringToint(String input) {
 		return Integer.parseInt(input);
 	}
