@@ -20,4 +20,9 @@ public class TestCalculator {
 	public void singleString() {
 		assertEquals(cal.Add("1"),1);
 	}
+	
+	@Test
+	public void twoString() {
+		assertEquals(cal.Add("2,4"),6);
+	}
 }
