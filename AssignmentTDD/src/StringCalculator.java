@@ -11,10 +11,13 @@ public class StringCalculator {
 			return stringToint(numbers);
 		}
 	
-		return stringToint(input[0])+stringToint(input[1]);
+		return strAdd(input[0],input[1]);
 		
 	}
-
+	private int strAdd(String num1, String num2) {
+		return stringToint(num1)+stringToint(num2);
+	}
+	
 	private int stringToint(String input) {
 		return Integer.parseInt(input);
 	}
