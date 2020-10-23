@@ -16,12 +16,16 @@ public class StringCalculator {
 	}
 	
 	private String[] splitString(String input) {
-		if(input.startsWith("//")) {
+		if(isStarts(input)) {
 			String[] parts = input.split("\n",2);
 			delimeter=parts[0].substring(2);
 			input=parts[1];
 		}
 		return input.split(delimeter);
+	}
+	
+	private boolean isStarts(String input) {
+		return input.startsWith("//");
 	}
 	
 	private int strAdd(String[] input) {
