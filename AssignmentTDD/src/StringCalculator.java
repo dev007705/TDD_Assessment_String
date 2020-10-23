@@ -19,6 +19,9 @@ public class StringCalculator {
 	
 	private int strAdd(String[] input) {
 		int sum=0;
+		for(String i:input) {
+			sum+=Integer.parseInt(i);
+		}
 		return sum;
 	}
 	private int strAdd(String num1, String num2) {
