@@ -30,4 +30,9 @@ public class TestCalculator {
 	public void unknownAmountString() {
 		assertEquals(cal.Add("1,2,3,4"),10);
 	}
+	
+	@Test
+	public void newlines() {
+		assertEquals(cal.Add("1\n2,3"),6);
+	}
 }

@@ -1,8 +1,6 @@
 public class StringCalculator {
 
 	public int Add(String numbers) {
-
-		String[] input=numbers.split(",");
 		
 		if(isEmpty(numbers)) {
 			return 0;
@@ -10,6 +8,8 @@ public class StringCalculator {
 		else if(findlength(numbers) == 1) {
 			return stringToint(numbers);
 		}
+		String[] input=numbers.split(",|\n");
+		
 		return strAdd(input);
 		
 	}
