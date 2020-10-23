@@ -15,4 +15,9 @@ public class TestCalculator {
 	public void emptyString() {
 		assertEquals(cal.Add(""),0);
 	}
+	
+	@Test
+	public void singleString() {
+		assertEquals(cal.Add("1"),1);
+	}
 }
