@@ -39,4 +39,8 @@ public class TestCalculator {
 	public void negativeNumbers() throws Exception {
 		cal.Add("-1");
 	}
+	@Test(expected  = Exception.class)
+	public void multipleNegativeNumbers() throws Exception {
+		cal.Add("-1,-4,-6");
+	}
 }

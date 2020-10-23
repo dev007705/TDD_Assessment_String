@@ -1,7 +1,8 @@
 public class StringCalculator {
 
-	private String delimeter=",|\n";
-	public int Add(String numbers) throws Exception {
+private String delimeter=",|\n";
+	
+	public int Add(String numbers) throws Exception{
 		
 		if(isEmpty(numbers)) {
 			return 0;
@@ -11,8 +12,7 @@ public class StringCalculator {
 		}
 		String[] input=splitString(numbers);
 		
-		return strAdd(input);
-		
+	    return strAdd(input);
 	}
 	
 	private String[] splitString(String input) {
@@ -28,16 +28,30 @@ public class StringCalculator {
 		return input.startsWith("//");
 	}
 	
-	private int strAdd(String[] input) throws Exception {
+	private int strAdd(String[] input) throws Exception{
+		isNegative(input);
 		int sum=0;
-		
 		for(String i:input) {
-			if(stringToint(i)<0) {
-				throw new Exception("negative not allowed "+i);
-			}
 			sum+=stringToint(i);
 		}
 		return sum;
+	}
+	private void isNegative(String[] num) throws Exception {
+		String msg="";
+		int count=0;
+		for(String i:num) {
+			if(stringToint(i)<0) {
+				count++;
+			}
+		}
+		if(count>0) {
+			for(String i:num) {
+				if(stringToint(i)<0) {
+					msg+=i+",";
+				}
+			}
+			throw new Exception("negative not allowed "+msg);
+		}
 	}
 		
 	private int stringToint(String input) {
