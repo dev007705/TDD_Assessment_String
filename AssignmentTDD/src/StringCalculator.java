@@ -2,11 +2,18 @@ public class StringCalculator {
 
 	public int Add(String numbers) {
 
-		if(numbers.isEmpty()) {
+		if(isEmpty(numbers)) {
 			return 0;
 		}
+		return stringToint(numbers);
 		
-		return Integer.parseInt(numbers);
-		
+	}
+	
+	private int stringToint(String input) {
+		return Integer.parseInt(input);
+	}
+	
+	private boolean isEmpty(String num) {
+		return num.isEmpty();
 	}
 }
