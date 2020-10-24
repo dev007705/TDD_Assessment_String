@@ -26,10 +26,10 @@ private String delimiter=",|\n";
 			return input.split(",|\n");
 		}
 	}
-	private static String parseDelimiter(String input) {
+	private String parseDelimiter(String input) {
 		String Newdelimiter = input.substring(2);
 		if (Newdelimiter.startsWith("[")) {
-			Newdelimiter = Newdelimiter.substring(1, Newdelimiter.length() - 1);
+			Newdelimiter = Newdelimiter.substring(1,findlength(Newdelimiter)-1);
 		}
 		return Pattern.quote(Newdelimiter);
 	}
