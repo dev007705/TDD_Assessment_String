@@ -30,6 +30,11 @@ private String delimeter=",|\n";
 	
 	private int strAdd(String[] input) throws Exception{
 		isNegative(input);
+		
+		return calculateSum(input);
+	}
+	
+	private int calculateSum(String[] input) {
 		int sum=0;
 		for(String i:input) {
 			if(stringToint(i)>1000) {
@@ -39,6 +44,7 @@ private String delimeter=",|\n";
 		}
 		return sum;
 	}
+	
 	private void isNegative(String[] num) throws Exception {
 		String msg="";
 		int count=0;
