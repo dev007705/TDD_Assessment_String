@@ -62,6 +62,6 @@ public class TestCalculator {
 	//Allow multiple Delimiter 
 	@Test
 	public void allowMultipleDelimeter() throws Exception {
-		assertEquals(cal.Add("//[*][%]\\n1*2%3"),6);
+		assertEquals(cal.Add("//[*][%]\n1*2%3"),6);
 	}
 }
