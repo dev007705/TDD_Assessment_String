@@ -33,7 +33,9 @@ private String delimiter=",|\n";
 		if (Newdelimiter.startsWith("[")) {
 			Newdelimiter = Newdelimiter.substring(1,findlength(Newdelimiter)-1);
 		}
-		return Stream.of(Newdelimiter.split("]\\[")).map(Pattern::quote).collect(Collectors.joining("|"));
+		return Stream.of(Newdelimiter.split("]\\["))
+				.map(Pattern::quote)
+				.collect(Collectors.joining("|"));
 	}
 	
 	private boolean isStarts(String input) {
