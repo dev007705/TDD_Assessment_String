@@ -1,6 +1,6 @@
 public class StringCalculator {
 
-private String delimeter=",|\n";
+private String delimiter=",|\n";
 	
 	public int Add(String numbers) throws Exception{
 		
@@ -16,12 +16,20 @@ private String delimeter=",|\n";
 	}
 	
 	private String[] splitString(String input) {
-		if(isStarts(input)) {
-			String[] parts = input.split("\n",2);
-			delimeter=parts[0].substring(2);
-			input=parts[1];
+		if (isStarts(input)) {
+			String[] parts = input.split("\n", 2);
+			delimiter = parseDelimiter(parts[0]);
+			return parts[1].split(delimiter);
+		} else {
+			return input.split(",|\n");
 		}
-		return input.split(delimeter);
+	}
+	private static String parseDelimiter(String input) {
+		String Newdelimiter = input.substring(2);
+		if (Newdelimiter.startsWith("[")) {
+			Newdelimiter = Newdelimiter.substring(1, Newdelimiter.length() - 1);
+		}
+		return Newdelimiter;
 	}
 	
 	private boolean isStarts(String input) {
