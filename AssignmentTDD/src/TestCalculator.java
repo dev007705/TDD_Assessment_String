@@ -54,9 +54,14 @@ public class TestCalculator {
 	public void ignoreNumberGreaterThan1000() throws Exception {
 		assertEquals(cal.Add("2,1001"),2);
 	}
-	//Delimeter with any length of defined format
+	//Delimiter with any length of defined format
 	@Test
 	public void AnyLengthDelimeter() throws Exception {
 		assertEquals(cal.Add("//[***]\n1***2***3"),6);
+	}
+	//Allow multiple Delimiter 
+	@Test
+	public void allowMultipleDelimeter() throws Exception {
+		assertEquals(cal.Add("//[*][%]\\n1*2%3"),6);
 	}
 }
