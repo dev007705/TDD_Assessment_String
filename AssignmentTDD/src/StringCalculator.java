@@ -44,7 +44,6 @@ private String delimiter=",|\n";
 	
 	private int strAdd(String[] input) throws Exception{
 		isNegative(input);
-		
 		return calculateSum(input);
 	}
 	
