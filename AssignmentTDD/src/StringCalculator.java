@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 
 private String delimiter=",|\n";
@@ -29,7 +31,7 @@ private String delimiter=",|\n";
 		if (Newdelimiter.startsWith("[")) {
 			Newdelimiter = Newdelimiter.substring(1, Newdelimiter.length() - 1);
 		}
-		return Newdelimiter;
+		return Pattern.quote(Newdelimiter);
 	}
 	
 	private boolean isStarts(String input) {
