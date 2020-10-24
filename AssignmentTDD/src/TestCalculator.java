@@ -49,7 +49,7 @@ public class TestCalculator {
 	public void multipleNegativeNumbers() throws Exception {
 		cal.Add("-1,-4,-6");
 	}
-	
+	// Number bigger than 1000 should be ignored
 	@Test
 	public void ignoreNumberGreaterThan1000() throws Exception {
 		assertEquals(cal.Add("2,1001"),2);

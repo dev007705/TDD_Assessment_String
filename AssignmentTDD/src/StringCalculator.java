@@ -32,6 +32,9 @@ private String delimeter=",|\n";
 		isNegative(input);
 		int sum=0;
 		for(String i:input) {
+			if(stringToint(i)>1000) {
+				continue;
+			}
 			sum+=stringToint(i);
 		}
 		return sum;
